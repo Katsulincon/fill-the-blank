@@ -1,0 +1,12 @@
+<h1>decks index page</h1>
+
+
+<div class="cards">
+  <% @decks.each do |deck| %>
+    <%= link_to deck_cards_path(deck) do  %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= deck.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
