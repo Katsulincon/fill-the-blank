@@ -24,8 +24,9 @@ class CardsController < ApplicationController
     letter_array = @card.original.split("")
 
     index_to_blank_array.each do  |index|
-      letter_array[index] = "⬛"
+      letter_array[index] = "_"
     end
+    # "⬛"
 
     @card.sentence = letter_array.join
 
@@ -51,8 +52,17 @@ end
 
 
 #1. create action(new/create)  DONE!
-#Styling card of cards index
-#Implement flip function to answer card
+#2.Styling card of cards index DONE!
+#3.Implement flip function to answer card DONE!
 
-#. update action for card
-#. delete action for card
+#4. Add /edit/update action for card
+#5. Add delete action for card
+#6. Over all styling(nav bar/ banner/butoon etc...)
+#7. Deploy on heroku
+#8.
+
+
+
+
+
+
