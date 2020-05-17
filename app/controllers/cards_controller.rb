@@ -73,7 +73,12 @@ class CardsController < ApplicationController
     else
       render :edit
     end
+  end
 
+  def destroy
+    @card = Card.find(params[:id])
+    @card.destroy
+    redirect_to deck_cards_path(@card.deck)
   end
 
   private

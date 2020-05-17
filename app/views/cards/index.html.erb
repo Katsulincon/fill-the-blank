@@ -23,6 +23,7 @@
     </div>
     <div class="card-product-infos">
       <%= link_to "Change blank area",edit_deck_card_path(id: card.id)  %>
+      <%= link_to "/Delete?", "/decks/#{@deck.id}/cards/#{card.id}", method: :delete, data: {confirm: "Are you sure?"}  %>
     </div>
   </div>
   <h2>----------------------</h2>
