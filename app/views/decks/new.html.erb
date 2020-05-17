@@ -1,0 +1,8 @@
+<h1>Create new folder</h1>
+
+<%= simple_form_for (@deck) do |f|  %>
+  <%= f.input :name %>
+  <%= f.submit "Create new folder" %>
+<% end %>
+
+<%= link_to "Back",decks_path  %>

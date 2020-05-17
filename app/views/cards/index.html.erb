@@ -1,4 +1,6 @@
-<h1>cards index page</h1>
+<h1><%= @deck.name %></h1>
+<%= link_to "Change deck name",edit_deck_path(@deck)  %>
+<%= link_to "Delete this deck", @deck, method: :delete, data: {confirm: "Are you sure?"} %>
 
 
 
@@ -9,10 +11,6 @@
     <div class="card-product-infos">
       <h2><%= card.sentence %></h2>
     </div>
-  <!--   <div class="card-product-infos">
-      <h2>Answer</h2>
-    </div> -->
-
     <div class="card-product-infos flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
@@ -22,6 +20,9 @@
           <h2><%= card.answer %></h2>
         </div>
       </div>
+    </div>
+    <div class="card-product-infos">
+      <%= link_to "Change blank area",edit_deck_card_path(id: card.id)  %>
     </div>
   </div>
   <h2>----------------------</h2>
