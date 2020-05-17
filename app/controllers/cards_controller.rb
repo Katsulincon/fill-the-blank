@@ -96,8 +96,10 @@ end
 #3.Implement flip function to answer card DONE!
 #3.5. edit/update/delete deck  DONE!
 
-#4. Add /edit/update action for card
-#5. Add delete action for card
+#4. Add /edit/update action for card  DONE!
+#5. Add delete action for card  DONE!
+
+# The rest...
 #6. Over all styling(nav bar/ banner/butoon etc...)
 #7. Deploy on heroku
 #8.
