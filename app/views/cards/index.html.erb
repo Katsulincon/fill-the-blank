@@ -1,36 +1,54 @@
 <h1>cards index page</h1>
 
+
+
+
+
 <% @cards.each do |card| %>
-<h3>Input Sentence : <%= card.original %>　</h3>
-<h3>Blanked Sentence : <%= card.sentence %>　</h3>
-<h3>Blank/Answer : <%= card.answer %>　</h3>
-<h2>----------------------</h2>
+  <div class="card-product">
+    <div class="card-product-infos">
+      <h2><%= card.sentence %></h2>
+    </div>
+  <!--   <div class="card-product-infos">
+      <h2>Answer</h2>
+    </div> -->
+
+    <div class="card-product-infos flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h2>Answer</h2>
+        </div>
+        <div class="flip-card-back">
+          <h2><%= card.answer %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2>----------------------</h2>
 <% end %>
 
 
 
 <h2>----------------------</h2>
-<%= link_to "Add crad",new_deck_card_path(@deck)  %>
-<% input = "I am Katsu" %>
-<% input_array = input.split("") %>
-<% num_array = (0..input.length - 1).to_a %>
+<h3>Add card</h3>
 
-<table>
-  <thead>
-    <tr>
-      <% num_array.each do |index| %>
-        <th style="text-align: center"><%=index%></th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <% input_array.each do |letter| %>
-        <td style="text-align: center"><%=letter%></td>
-      <% end %>
-    </tr>
-  </tbody>
-</table>
+<form action="/decks/<%= params[:deck_id] %>/cards/new" method="get">
+  <input type="text" name="original" placeholder="Type sentence">
+  <input type="submit">
+</form>
+
+
+<%= link_to "Back to Folders", decks_path  %>
+<!-- <form class="new_card" id="new_card" action="/decks/:deck_id/cards" accept-charset="UTF-8">
+  <input type="hidden" name="authenticity_token" value="fUrBymmVzFG49YTQE9xKfohttEtW7eHnui2WT6KWpRXT6g9dz73lhZ7bRdHH+RuV/TFoB23OG5l1eo731o8l6g==">
+  <label for="card_sentence">Name</label>
+  <input type="text" name="card[original]" id="card_sentence">
+
+  <input type="submit" name="commit" value="Add sentence" data-disable-with="Create Restaurant">
+</form> -->
+
+
+
 
 <!-- <table>
   <thead>

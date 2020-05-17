@@ -1,9 +1,38 @@
-<h1>Original sentance input</h1>
+<h1>Where do you want it blank?</h1>
 
-<h2>Put your sentence here</h2>
+<table>
+  <thead>
+    <tr>
+      <% @num_array.each do |index| %>
+        <th style="text-align: center"><%=index%></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @letter_array.each do |letter| %>
+        <td style="text-align: center"><%=letter%></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+
+<form action="/decks/<%= params[:deck_id] %>/cards" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="hidden" name="original" value="<%= @card.original %>">
+  <input type="number" name="first_index" placeholder="Type first index of blank">
+ <!--  <input type="submit"> -->
+  <input type="text" name="second_index" placeholder="Type second index of blank">
+  <input type="submit">
+</form>
+
+<%= link_to "Back to cards",deck_cards_path(@deck)  %>
+
+<%#= simple_form_for [@deck, @card] do |f|  %>
+  <%#= f.input :first_index, collection: (0..@card.original.length) %>
+  <%#= f.input :second_index, collection: (0..@card.original.length) %>
+  <%#= f.submit %>
+<%# end %>
 
 
-<%= simple_form_for [@deck, @card] do |f|  %>
-  <%= f.input :original %>
-  <%= f.submit %>
-<% end %>
+<!-- (ok!)Userに、どの箇所をblankにしたいかを聞く  -->
