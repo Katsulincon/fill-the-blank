@@ -1,13 +1,13 @@
 <h1>Where do you want it blank?</h1>
 
 <table>
-  <thead>
+<!--   <thead>
     <tr>
-      <% @num_array.each do |index| %>
-        <th style="text-align: center"><%=index%></th>
-      <% end %>
+      <%# @num_array.each do |index| %>
+        <th style="text-align: center"><%#=index%></th>
+      <%# end %>
     </tr>
-  </thead>
+  </thead> -->
 
   <tbody>
     <tr>
@@ -24,9 +24,9 @@
 <form action="/decks/<%= params[:deck_id] %>/cards" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <input type="hidden" name="original" value="<%= @card.original %>">
-  <input type="number" name="first_index" placeholder="Type first index of blank" id="first_index">
-  <input type="text" name="second_index" placeholder="Type second index of blank" id="second_index">
-  <input type="submit">
+  <input type="hidden" name="first_index" placeholder="Type first index of blank" id="first_index"><!-- number -->
+  <input type="hidden" name="second_index" placeholder="Type second index of blank" id="second_index"><!-- text -->
+  <input type="submit" class='btn'>
 </form>
 
 

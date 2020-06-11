@@ -4,7 +4,6 @@ const indexInput = () => {
   const letters = document.querySelectorAll('.letter');
 
   letters.forEach((letter) => {
-    // console.log(letter.dataset.letterIndex );
 
       letter.addEventListener('click', (event) => {
         console.log('hello');
@@ -27,7 +26,6 @@ const indexInput = () => {
           });
           // letter.style.color = "red";
           letter.classList.add("red");
-          // console.log(letters[parseInt(firstIndex.value)..parseInt(secondIndex.value)]);
         } else {
           firstIndex.value = letter.dataset.letterIndex;
           secondIndex.value = "";
@@ -42,22 +40,10 @@ const indexInput = () => {
 
       });
 
-
   });
 
 
-  // classList.add()
 
-
-  // text.addEventListener('onclick', (event) => {
-  //   console.log('hello');
-  //   if (firstIndex.value === null) {
-  //     firstIndex.value = currentTarget.dataset.dataletterindex ;
-  //   } else {
-  //     secondIndex.value = currentTarget.dataset.dataletterindex ;
-  //   }
-
-  // });
 
 
 
