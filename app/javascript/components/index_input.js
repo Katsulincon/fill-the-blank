@@ -1,13 +1,13 @@
 const indexInput = () => {
-  const firstIndex = document.querySelector('#first_index');
-  const secondIndex = document.querySelector('#second_index');
+  const firstIndex = document.querySelector('#card_first_index');
+  const secondIndex = document.querySelector('#card_second_index');
   const letters = document.querySelectorAll('.letter');
 
   letters.forEach((letter) => {
 
       letter.addEventListener('click', (event) => {
         console.log('hello');
-        if (firstIndex.value === "") {
+        if (firstIndex.value === "" ) {
           firstIndex.value = letter.dataset.letterIndex;
           letter.classList.add("red");
           // letter.style.color = "red";

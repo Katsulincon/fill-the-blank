@@ -63,6 +63,13 @@
   align-items: center;
 }
 
+.option-cards {
+  padding: 10px;
+  a {
+    text-decoration: none;
+  }
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

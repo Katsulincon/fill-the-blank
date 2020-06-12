@@ -1,18 +1,20 @@
 <h1>Where do you want it blank?</h1>
 
 <table>
-  <thead>
+<!--   <thead>
     <tr>
-      <% @num_array.each do |index| %>
-        <th style="text-align: center"><%=index%></th>
-      <% end %>
+      <%# @num_array.each do |index| %>
+        <th style="text-align: center"><%#=index%></th>
+      <%# end %>
     </tr>
-  </thead>
+  </thead> -->
   <tbody>
     <tr>
-      <% @letter_array.each do |letter| %>
-        <td style="text-align: center"><%=letter%></td>
-      <% end %>
+      <div class="letters">
+        <% @letter_array.each_with_index do |letter, index| %>
+          <td style="text-align: center" class="letter" data-letter-index='<%= index %>'><%=letter%></td>
+        <% end %>
+      </div>
     </tr>
   </tbody>
 </table>
@@ -20,9 +22,11 @@
 
 
 <%= simple_form_for [@deck, @card] do |f|  %>
-  <%= f.input :first_index, collection: (0..@card.original.length) %>
-  <%= f.input :second_index, collection: (0..@card.original.length) %>
-  <%= f.submit %>
+  <%#= f.input :first_index, collection: (0..@card.original.length) %>
+  <%#= f.input :second_index, collection: (0..@card.original.length) %>
+  <%= f.input :first_index, :as => :hidden %>
+  <%= f.input :second_index, :as => :hidden %>
+  <%= f.submit "Submit", :class => "btn"%>
 <% end %>
 
 <%= link_to "Back to cards",deck_cards_path(@deck)  %>

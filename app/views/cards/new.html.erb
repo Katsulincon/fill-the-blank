@@ -9,6 +9,7 @@
     </tr>
   </thead> -->
 
+
   <tbody>
     <tr>
       <div class="letters">
@@ -24,8 +25,8 @@
 <form action="/decks/<%= params[:deck_id] %>/cards" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <input type="hidden" name="original" value="<%= @card.original %>">
-  <input type="hidden" name="first_index" placeholder="Type first index of blank" id="first_index"><!-- number -->
-  <input type="hidden" name="second_index" placeholder="Type second index of blank" id="second_index"><!-- text -->
+  <input type="hidden" name="first_index" placeholder="Type first index of blank" id="card_first_index"><!-- number -->
+  <input type="hidden" name="second_index" placeholder="Type second index of blank" id="card_second_index"><!-- text -->
   <input type="submit" class='btn'>
 </form>
 
