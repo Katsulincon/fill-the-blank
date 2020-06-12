@@ -5,14 +5,13 @@
 
 
 
-
-<% @cards.each do |card| %>
-  <div class="card-product">
-    <div class="card-product-infos">
-      <h2><%= card.sentence %></h2>
+<% @cards.each_with_index do |card, index| %>
+  <div class="card-product" >
+    <div class="card-product-infos sentence-cards">
+      <h2>(<%= index + 1%>)<%= card.sentence %></h2>
     </div>
-    <div class="card-product-infos flip-card">
-      <div class="flip-card-inner">
+    <div class="card-product-infos flip-card" >
+      <div class="flip-card-inner" onclick="this.classList.toggle('flipped');">
         <div class="flip-card-front">
           <h2>Answer</h2>
         </div>
@@ -21,12 +20,11 @@
         </div>
       </div>
     </div>
-    <div class="card-product-infos">
+    <div class="card-product-infos option-cards">
       <%= link_to "Change blank area",edit_deck_card_path(id: card.id)  %>
       <%= link_to "/Delete?", "/decks/#{@deck.id}/cards/#{card.id}", method: :delete, data: {confirm: "Are you sure?"}  %>
     </div>
   </div>
-  <h2>----------------------</h2>
 <% end %>
 
 
