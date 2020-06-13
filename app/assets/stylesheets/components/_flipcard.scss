@@ -40,8 +40,11 @@
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: pink;
-  color: black;
+  background-color: white;
+  color: dodgerblue;
+  h2 {
+    font-size: 21px;
+  }
 }
 
 /* Style the back side */

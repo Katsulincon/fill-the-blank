@@ -4,6 +4,22 @@
   grid-gap: 16px;
 }
 
+.card-container {
+  margin: 12px 116px;
+}
+
+.card-title {
+  display: flex;
+  margin: 24px 40px;
+  justify-content: center;
+  a {
+    color: lightblue;
+    padding: 18px 6px 18px 8px;
+    color: black;
+    opacity: 0.3;
+  }
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -28,6 +44,7 @@
   align-items: center;
   margin-bottom: 20px;
   margin: 24px 40px;
+  justify-content: space-between;
 }
 
 .card-product img {
@@ -48,6 +65,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+
 }
 
 .card-product .card-product-infos {
@@ -61,12 +79,21 @@
   width: 800px;
   display: flex;
   align-items: center;
+  position: relative;
+  padding-left: 32px;
 }
 
 .option-cards {
   padding: 10px;
+  display: flex;
+  position: absolute;
+  right: -24px;
+  top: -16px;
   a {
     text-decoration: none;
+    color: dodgerblue;
+    padding: 18px 6px 18px 8px;
+    font-size: 15px;
   }
 }
 

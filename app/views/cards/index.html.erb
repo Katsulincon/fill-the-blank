@@ -1,31 +1,52 @@
-<h1><%= @deck.name %></h1>
-<%= link_to "Change deck name",edit_deck_path(@deck)  %>
-<%= link_to "Delete this deck", @deck, method: :delete, data: {confirm: "Are you sure?"} %>
 
 
 
+<div class="card-container">
+  <div class="card-title">
+    <h1><%= @deck.name %></h1>
+<!--     <%#= link_to edit_deck_path(@deck) do  %>
+      <i class="fas fa-pen"></i>
+    <%# end %>
+    <%#= link_to @deck, method: :delete, data: {confirm: "Are you sure?"} do %>
+      <i class="fas fa-trash"></i>
+    <%# end %> -->
+  </div>
+  <% @cards.each_with_index do |card, index| %>
+    <div class="card-product" >
+      <div class="card-product-infos sentence-cards">
+        <h2>(<%= index + 1%>)<%= card.sentence %></h2>
 
-<% @cards.each_with_index do |card, index| %>
-  <div class="card-product" >
-    <div class="card-product-infos sentence-cards">
-      <h2>(<%= index + 1%>)<%= card.sentence %></h2>
-    </div>
-    <div class="card-product-infos flip-card" >
-      <div class="flip-card-inner" onclick="this.classList.toggle('flipped');">
-        <div class="flip-card-front">
-          <h2>Answer</h2>
+        <div class="card-product-infos option-cards">
+          <%= link_to edit_deck_card_path(id: card.id) do %>
+            <i class="fas fa-pen"></i>
+          <% end %>
+          <%= link_to "/decks/#{@deck.id}/cards/#{card.id}", method: :delete, data: {confirm: "Are you sure?"} do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
         </div>
-        <div class="flip-card-back">
-          <h2><%= card.answer %></h2>
+
+      </div>
+      <div class="card-product-infos flip-card" >
+        <div class="flip-card-inner" onclick="this.classList.toggle('flipped');">
+          <div class="flip-card-front">
+            <h2>Answer</h2>
+          </div>
+          <div class="flip-card-back">
+            <h2><%= card.answer %></h2>
+          </div>
         </div>
       </div>
+<!--       <div class="card-product-infos option-cards">
+        <%#= link_to edit_deck_card_path(id: card.id) do %>
+          <i class="fas fa-pen"></i>
+        <%# end %>
+        <%#= link_to "/decks/#{@deck.id}/cards/#{card.id}", method: :delete, data: {confirm: "Are you sure?"} do %>
+          <i class="fas fa-trash"></i>
+        <%# end %>
+      </div> -->
     </div>
-    <div class="card-product-infos option-cards">
-      <%= link_to "Change Blank Area",edit_deck_card_path(id: card.id)  %>
-      <%= link_to "/Delete?", "/decks/#{@deck.id}/cards/#{card.id}", method: :delete, data: {confirm: "Are you sure?"}  %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 
 
