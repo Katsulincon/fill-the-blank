@@ -53,13 +53,15 @@
   <h3>Add card</h3>
 
   <form action="/decks/<%= params[:deck_id] %>/cards/new" method="get">
-    <input type="text" name="original" placeholder="Type sentence" >
+    <input type="text" name="original" placeholder="Type sentence" class="input-form" >
     <input type="submit" class="btn">
   </form>
 </div>
 
 
-<%= link_to "Back to Folders", decks_path  %>
+<%= link_to  decks_path  do %>
+  <h2 class="back-btn">Back</h2>
+<% end %>
 <!-- <form class="new_card" id="new_card" action="/decks/:deck_id/cards" accept-charset="UTF-8">
   <input type="hidden" name="authenticity_token" value="fUrBymmVzFG49YTQE9xKfohttEtW7eHnui2WT6KWpRXT6g9dz73lhZ7bRdHH+RuV/TFoB23OG5l1eo731o8l6g==">
   <label for="card_sentence">Name</label>

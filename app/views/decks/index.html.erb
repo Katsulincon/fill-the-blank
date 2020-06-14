@@ -1,12 +1,13 @@
-<h1>decks index page</h1>
+<h1>Folders</h1>
 <%= link_to "Create new deck",new_deck_path  %>
 
 
 <div class="cards">
   <% @decks.each do |deck| %>
     <%= link_to deck_cards_path(deck) do  %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <%= deck.name %>
+      <!-- <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)"> -->
+      <div class="card-category folders-card">
+        <h2><%= deck.name %></h2>
       </div>
     <% end %>
   <% end %>
