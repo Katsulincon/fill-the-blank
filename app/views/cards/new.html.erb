@@ -1,38 +1,48 @@
-<h1>Where do you want it blank?</h1>
-
-<table>
-<!--   <thead>
-    <tr>
-      <%# @num_array.each do |index| %>
-        <th style="text-align: center"><%#=index%></th>
-      <%# end %>
-    </tr>
-  </thead> -->
+<div class="container p-4">
+  <h4>Please click the first lettre and the last letter for the blank</h4>
 
 
-  <tbody>
-    <tr>
-      <div class="letters">
-      <% @letter_array.each_with_index do |letter, index| %>
-        <td style="text-align: center" class="letter" data-letter-index='<%= index %>'><%=letter%></td>
-      <% end %>
-      </div>
-    </tr>
-  </tbody>
-
-</table>
-
-<form action="/decks/<%= params[:deck_id] %>/cards" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="hidden" name="original" value="<%= @card.original %>">
-  <input type="hidden" name="first_index" placeholder="Type first index of blank" id="card_first_index"><!-- number -->
-  <input type="hidden" name="second_index" placeholder="Type second index of blank" id="card_second_index"><!-- text -->
-  <input type="submit" class='btn'>
-</form>
+    <table>
+    <!--   <thead>
+        <tr>
+          <%# @num_array.each do |index| %>
+            <th style="text-align: center"><%#=index%></th>
+          <%# end %>
+        </tr>
+      </thead> -->
 
 
+        <tbody>
+
+          <tr>
+
+            <% @letter_array.each_with_index do |letter, index| %>
+              <td style="text-align: center" class="letter" data-letter-index='<%= index %>'><p><%=letter%></p></td>
+            <% end %>
+
+
+          </tr>
+
+        </tbody>
+
+
+    </table>
+
+
+  <form action="/decks/<%= params[:deck_id] %>/cards" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="hidden" name="original" value="<%= @card.original %>">
+    <input type="hidden" name="first_index" placeholder="Type first index of blank" id="card_first_index"><!-- number -->
+    <input type="hidden" name="second_index" placeholder="Type second index of blank" id="card_second_index"><!-- text -->
+    <input type="submit" class='btn'>
+  </form>
 
 
 
-<%= link_to "Back to cards",deck_cards_path(@deck)  %>
+
+
+  <%= link_to deck_cards_path(@deck) do %>
+    <h2 class="back-btn">Back</h2>
+  <% end %>
+</div>
 

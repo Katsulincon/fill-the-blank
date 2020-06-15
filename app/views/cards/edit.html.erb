@@ -1,32 +1,37 @@
-<h1>Where do you want it blank?</h1>
+<div class="container p-4">
+  <h4>Please click the first lettre and the last letter for the blank</h4>
 
-<table>
-<!--   <thead>
-    <tr>
-      <%# @num_array.each do |index| %>
-        <th style="text-align: center"><%#=index%></th>
-      <%# end %>
-    </tr>
-  </thead> -->
-  <tbody>
-    <tr>
-      <div class="letters">
-        <% @letter_array.each_with_index do |letter, index| %>
-          <td style="text-align: center" class="letter" data-letter-index='<%= index %>'><%=letter%></td>
-        <% end %>
-      </div>
-    </tr>
-  </tbody>
-</table>
+  <table>
+  <!--   <thead>
+      <tr>
+        <%# @num_array.each do |index| %>
+          <th style="text-align: center"><%#=index%></th>
+        <%# end %>
+      </tr>
+    </thead> -->
+    <tbody>
+      <tr>
+        <div class="letters">
+          <% @letter_array.each_with_index do |letter, index| %>
+            <td style="text-align: center" class="letter" data-letter-index='<%= index %>'><%=letter%></td>
+          <% end %>
+        </div>
+      </tr>
+    </tbody>
+  </table>
 
 
 
-<%= simple_form_for [@deck, @card] do |f|  %>
-  <%#= f.input :first_index, collection: (0..@card.original.length) %>
-  <%#= f.input :second_index, collection: (0..@card.original.length) %>
-  <%= f.input :first_index, :as => :hidden %>
-  <%= f.input :second_index, :as => :hidden %>
-  <%= f.submit "Submit", :class => "btn"%>
-<% end %>
+  <%= simple_form_for [@deck, @card] do |f|  %>
+    <%#= f.input :first_index, collection: (0..@card.original.length) %>
+    <%#= f.input :second_index, collection: (0..@card.original.length) %>
+    <%= f.input :first_index, :as => :hidden %>
+    <%= f.input :second_index, :as => :hidden %>
+    <%= f.submit "Submit", :class => "btn"%>
+  <% end %>
 
-<%= link_to "Back to cards",deck_cards_path(@deck)  %>
+  <%= link_to deck_cards_path(@deck) do %>
+    <h2 class="back-btn">Back</h2>
+  <% end %>
+
+</div>

@@ -1,4 +1,11 @@
 tr {
+  padding: 4px;
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   &:hover {
     cursor: pointer;
   }
@@ -7,3 +14,36 @@ tr {
 .red {
   color: red;
 }
+
+td.letter {
+  font-size: 18px;
+  width: 18px;
+  padding-left: 2px;
+  padding-right: 2px;
+  border-bottom: 1px solid black;
+  p {
+    margin-bottom: 2px;
+  }
+}
+
+.container {
+  text-align: center;
+}
+
+.btn {
+  margin-top: 16px;
+  color: white;
+  background-color: $lightblue;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: $qyellow;
+  color: white;
+  // transition: 0.4s;
+}
+
+table {
+  margin: 0 auto;
+}
+
