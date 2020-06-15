@@ -106,8 +106,9 @@
   i {
     // color: white;
     // text-shadow: black;
-    -webkit-text-stroke: 0.4px #66B6A5;
-    color: white;
+    -webkit-text-stroke: 0.4px #FFCD1F;
+    color: #FFCD1F;
+    opacity: 0.8;
   }
 }
 
@@ -132,20 +133,18 @@
   .btn {
     margin-top: 16px;
     color: white;
-    background-color: #66B6A5;
+    background-color: $lightblue;
     border-radius: 4px;
   }
 }
 
 h2.back-btn {
-  color: white;
+  color: $qblue;
   margin-left: 11%;
   margin-top: 1%;
   margin-bottom: 2%;
 }
-a:hover {
-  // text-decoration: none;
-}
+
 
 
 
