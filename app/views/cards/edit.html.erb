@@ -27,7 +27,7 @@
     <%#= f.input :second_index, collection: (0..@card.original.length) %>
     <%= f.input :first_index, :as => :hidden %>
     <%= f.input :second_index, :as => :hidden %>
-    <%= f.submit "Submit", :class => "btn"%>
+    <%= f.submit "Submit", :class => "btn new-edit-btn"%>
   <% end %>
 
   <%= link_to deck_cards_path(@deck) do %>
